@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+	<ltng:require styles="/resource/bootstrapcssmin" afterScriptsLoaded="{!c.doScriptLoad}"/>
+    <aura:attribute name="start" type="String"/>
+    <aura:attribute name="stop" type="String"/>
+    <aura:attribute name="sObj" type="String"/>
+    <aura:attribute name="field" type="String"/>
+    <aura:attribute name="stopwatch" type="Object"/>
+    <!-- Handle component initialization in a client-side controller -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="bootstrap-sf1 container">
+        <div class="bootstrap-sf1 row">
+            <div aura:id="time" class="bootstrap-sf1 col-xs-12" style="font-weight: bold;">
+                Time: 00:00:00:000
+            </div>
+        </div>
+        <div class="bootstrap-sf1 row">
+            <div class="bootstrap-sf1 col-xs-12">
+                <button id="start" class="bootstrap-sf1 btn btn-primary" onclick="{!c.onClick}">Start</button>
+                <button id="stop" class="bootstrap-sf1 btn btn-primary" onclick="{!c.onClick}">Stop</button>
+                <button id="reset" class="bootstrap-sf1 btn btn-primary" onclick="{!c.onClick}">Reset</button>
+            </div>
+        </div>
+    </div>
+</aura:component>
